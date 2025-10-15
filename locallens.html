@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Lens - Gujarat</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const bookingForm = document.querySelector("#booking form");
+      const reviewForm = document.querySelector("#reviews form");
+
+      if (bookingForm) {
+        bookingForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const name = document.getElementById("traveler-name").value;
+          const guide = document.getElementById("guide-select").value;
+          alert(`Thank you, ${name}! Your booking with ${guide} has been received.`);
+          bookingForm.reset();
+        });
+      }
+
+      if (reviewForm) {
+        reviewForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const guide = document.getElementById("review-guide").value;
+          const rating = document.getElementById("rating").value;
+          alert(`Thanks for reviewing ${guide} with a ${rating} rating!`);
+          reviewForm.reset();
+        });
+      }
+    });
+  </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    section {
+      animation: fadeInUp 0.7s ease both;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    form input::placeholder, form textarea::placeholder {
+      color: #b37400;
+    }
+
+    nav a i {
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+    <h1>Local Lens - Gujarat</h1>
+  <p>Discover the hidden gems of Gujarat with local guides</p>
+</header>
+
+<nav>
+  
+  <a href="#guides"><i class="fas fa-user"></i>Guides</a>
+  <a href="#booking"><i class="fas fa-calendar-check"></i>Booking</a>
+  <a href="#photos"><i class="fas fa-camera"></i>Photos</a>
+  <a href="#recommend"><i class="fas fa-star"></i>Recommendations</a>
+  <a href="#reviews"><i class="fas fa-pen"></i>Reviews</a>
+  <a href="#login"><i class="fas fa-sign-in-alt"></i>Login</a>
+  <a href="#signup"><i class="fas fa-user-plus"></i>Sign Up</a>
+<a href="https://www.blog.thetarzanway.com/post/hidden-gems-of-gujarat"><i class="fas fa-map-marked-alt"></i> Places</a>
+</nav>
+
+<section id="login">
+  <h2>Login</h2>
+  <form>
+    <input type="email" placeholder="Email" required>
+    <input type="password" placeholder="Password" required>
+    <button type="submit">Login</button>
+  </form>
+  <p style="text-align:center">Don't have an account? <a href="#signup">Sign up</a></p>
+</section>
+
+<section id="signup">
+  <h2>Sign Up</h2>
+  <form>
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email" required>
+    <input type="password" placeholder="Password" required>
+    <input type="password" placeholder="Confirm Password" required>
+    <button type="submit">Create Account</button>
+  </form>
+  <p style="text-align:center">Already have an account? <a href="#login">Login</a></p>
+</section>
+
+<section id="guides">
+  <h2>Available Guides in Gujarat</h2>
+  <div class="guide-card">
+    <h3>Ravi Patel</h3>
+    <p>Expert in Rann of Kutch and handicraft villages.</p>
+    <p>Languages: Gujarati, Hindi, English</p>
+    <p>Years of Experience: 7</p>
+    <p>Rating: ★★★★☆</p>
+  </div>
+  <div class="guide-card">
+    <h3>Anjali Desai</h3>
+    <p>Specializes in food tours in Ahmedabad and local crafts of Gujarat.</p>
+    <p>Languages: Hindi, Gujarati, English</p>
+    <p>Years of Experience: 5</p>
+    <p>Rating: ★★★★★</p>
+  </div>
+</section>
+
+<section id="booking">
+  <h2>Book a Guide</h2>
+  <form>
+    <label for="traveler-name">Your Name</label>
+    <input type="text" id="traveler-name" name="traveler-name">
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email">
+
+    <label for="guide-select">Choose a Guide</label>
+    <select id="guide-select" name="guide-select">
+      <option>Ravi Patel</option>
+      <option>Anjali Desai</option>
+    </select>
+
+    <label for="date">Date of Tour</label>
+    <input type="date" id="date" name="date">
+
+    <label for="message">Additional Notes</label>
+    <textarea id="message" rows="4"></textarea>
+
+    <button type="submit">Book Now</button>
+  </form>
+</section>
+
+<section id="photos">
+  <h2>Photo Reviews</h2>
+  <div class="review-card">
+    <p><strong>Traveler:</strong> Meena R.</p>
+    <img src="image/b2db007d307b09233d19a0f4b9b1878e.jpg" alt="Photo by Meena" class="review-photo">
+    <p>"Ravi guided us through the salt flats and tribal art villages—unforgettable!"</p>
+    <p><strong>Traveler:</strong> Karan V.</p>
+    <img src="image/image2.jpg" alt="Photo by Karan" class="review-photo">
+    <p>"Anjali guided us through pottery workshop! had funnnnn!!!!!"</p>
+  </div>
+</section>
+
+<section id="recommend">
+  <h2>Traveler Recommendations</h2>
+  <div class="recommendation-card">
+    <p><strong>From:</strong> Arjun K.</p>
+    <p>"Anjali's food walk in Ahmedabad was the best part of my trip—khakhra, fafda, and heritage sites combined!"</p>
+  </div>
+</section>
+
+<section id="reviews">
+  <h2>Guide Reviews</h2>
+  <form>
+    <label for="review-guide">Select Guide</label>
+    <select id="review-guide" name="review-guide">
+      <option>Ravi Patel</option>
+      <option>Anjali Desai</option>
+    </select>
+
+    <label for="review-text">Your Review</label>
+    <textarea id="review-text" rows="4"></textarea>
+
+    <label for="rating">Rating</label>
+    <select id="rating" name="rating">
+      <option>★★★★★</option>
+      <option>★★★★☆</option>
+      <option>★★★☆☆</option>
+      <option>★★☆☆☆</option>
+      <option>★☆☆☆☆</option>
+    </select>
+
+    <button type="submit">Submit Review</button>
+  </form>
+</section>
+
+<!-- Existing website sections remain here -->
+
+</body>
+</html>
+
+
